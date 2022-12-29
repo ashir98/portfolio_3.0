@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class AboutPage extends StatelessWidget {
   const AboutPage({super.key});
@@ -13,13 +10,13 @@ class AboutPage extends StatelessWidget {
         Container(
           height: 150,
           width: 300,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             
             borderRadius: BorderRadius.all(Radius.circular(10))
           ),
-          child: Card(
+          child: const Card(
             child: Padding(
-              padding: const EdgeInsets.all(10),
+              padding: EdgeInsets.all(10),
               child: Center(child: Text("Hi, my name is Syed Ashir Ali and I'm a Flutter Mobile App Developer and also a student of Computer Science from Karachi, Pakistan. I have 1.5 year experience in Flutter mobile application development", style: TextStyle(fontSize: 18),)),
             ),
           ),
@@ -29,7 +26,7 @@ class AboutPage extends StatelessWidget {
           child: Container(
             height: 310,
             width: 300,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               
               borderRadius: BorderRadius.all(Radius.circular(10))
             ),
@@ -38,7 +35,7 @@ class AboutPage extends StatelessWidget {
                 padding: const EdgeInsets.all(10),
                 child: Center(
                   child: Column(
-                    children: [
+                    children: const [
                       ListTile(
                         title: Text("Name:", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
                         trailing: Text("Syed Ashir Ali", style: TextStyle(fontSize: 20)),

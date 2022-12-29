@@ -1,8 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_remix/flutter_remix.dart';
 import 'package:portfolio_3/Widgets/skillset_widget.dart';
 
 class SkillsPage extends StatelessWidget {
@@ -24,7 +20,7 @@ class SkillsPage extends StatelessWidget {
                  SkillSet(skill: "Firebase", level: "Basic",)
               ],
             ),
-            SizedBox(width: 20,),
+            const SizedBox(width: 20,),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

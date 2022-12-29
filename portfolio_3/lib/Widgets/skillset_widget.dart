@@ -1,10 +1,12 @@
 
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:flutter_remix/flutter_remix.dart';
 
 class SkillSet extends StatelessWidget {
   String skill, level;
- SkillSet({required this.skill, required this.level});
+ SkillSet({super.key, required this.skill, required this.level});
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +20,8 @@ class SkillSet extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text(skill,style: TextStyle(fontSize: 18,), ),
-                      Text(level,style: TextStyle(fontSize:12,), ),
+                      Text(skill,style: const TextStyle(fontSize: 18,), ),
+                      Text(level,style: const TextStyle(fontSize:12,), ),
                     ],
                   )
                 ],
