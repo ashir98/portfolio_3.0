@@ -9,7 +9,7 @@ class ThemeSetting extends ChangeNotifier {
   ThemeData get currentTheme => _currentTheme;
 
 
-Icon themeChanged(){
+Icon iconChange(){
     if(_currentTheme == lightTheme()){
       return  const Icon(FlutterRemix.moon_line);
     }else{

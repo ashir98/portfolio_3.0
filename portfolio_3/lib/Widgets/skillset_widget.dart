@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_remix/flutter_remix.dart';
+import 'package:sizer/sizer.dart';
 
 class SkillSet extends StatelessWidget {
   String skill, level;
@@ -10,22 +11,30 @@ class SkillSet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 20),
+    double width = MediaQuery.of(context).size.width;
+
+    return Sizer(
+      builder: (context, orientation, deviceType) {
+
+        return Padding(
+      padding:  const EdgeInsets.symmetric(horizontal:20,vertical: 20),
       child: Row(crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  const Icon(FlutterRemix.checkbox_circle_line,color: Color(0xff37a0f9),),
+                  Icon(FlutterRemix.checkbox_circle_line,color: const Color(0xff37a0f9),size: width*0.06,),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text(skill,style: const TextStyle(fontSize: 18,), ),
-                      Text(level,style: const TextStyle(fontSize:12,), ),
+                      Text(skill,style:  TextStyle(fontSize: width*0.05,fontWeight: FontWeight.w600), ),
+                      Text(level,style:  TextStyle(fontSize:width*0.04,), ),
                     ],
                   )
                 ],
               ),
+    );
+        
+      },
     );
   }
 }

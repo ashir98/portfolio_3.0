@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 ThemeData lightTheme() {
   return ThemeData(
-    
+    textTheme: GoogleFonts.openSansTextTheme(),
     useMaterial3: true,
     shadowColor: const Color(0xff38a0f9),
     scaffoldBackgroundColor: Colors.white,
@@ -12,7 +13,7 @@ ThemeData lightTheme() {
     cardTheme: const CardTheme(
       color: Color(0xffe8e8eb),
     ),
- 
+    
     iconTheme: const IconThemeData(color: Colors.black),
     tabBarTheme: const TabBarTheme(
         labelStyle: TextStyle(
@@ -29,6 +30,7 @@ ThemeData lightTheme() {
 
 ThemeData darkTheme(){
   return ThemeData.dark().copyWith(
+    textTheme: GoogleFonts.openSansTextTheme(TextTheme(headline1: TextStyle(color: Colors.white), headline2: TextStyle(color: Colors.white))),
     useMaterial3: true,
     scaffoldBackgroundColor: const Color(0xff0a141d),
     appBarTheme: const AppBarTheme(

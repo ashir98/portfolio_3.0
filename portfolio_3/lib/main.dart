@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_3/Provider/theme_settings.dart';
 import 'package:portfolio_3/Screens/home.dart';
-import 'package:portfolio_3/Widgets/project_detail.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -25,7 +24,7 @@ class _Portfolio3State extends State<Portfolio3> {
         return MaterialApp(
           theme: settings.currentTheme, 
           debugShowCheckedModeBanner: false,
-          home:  HomePage(),
+          home:  const HomePage(),
         );
       },
 
