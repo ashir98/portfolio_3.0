@@ -19,14 +19,17 @@ class HomePage extends StatefulWidget {
 }
 
 
-AccountUrl accountUrl = AccountUrl();
+
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
-  
   @override
   Widget build(BuildContext context) {
+    
+    AccountUrl accountUrl = AccountUrl();
+    
     TabController tabController = TabController(length: 3, vsync: this);
     final settings = Provider.of<ThemeSetting>(context);
+
     return Sizer(
       builder: (context, orientation, deviceType) {
         return MaterialApp(
@@ -68,6 +71,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 maxRadius: 75,
                                 minRadius: 70,
                                 backgroundImage: AssetImage("images/dp.jpg"),
+                                backgroundColor: Colors.transparent ,
                               ),
                             ),
                           ),
@@ -99,59 +103,56 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   ///SOCIAL ICONS
                   Padding(
                     padding:
-                        EdgeInsets.symmetric(horizontal: 10.w, vertical: 1.h),
+                        EdgeInsets.symmetric(horizontal: 10.w, vertical: 2.h),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ///INSTAGRAM
-                        IconButton(
-                          padding: EdgeInsets.zero,
-                          onPressed: ()async{
+                        GestureDetector(
+                          onTap:()async{
                             await launchUrl(Uri.parse(accountUrl.instaUrl),mode: LaunchMode.externalApplication);
                           },
-                          icon: Icon(
+                          child: Icon(
                             FlutterRemix.instagram_line,
                             size: 23.sp,
                           ),
-
-
                         ),
+                        SizedBox(width: 3.w,),
                         
                         ///LINKEDIN
-                        IconButton(
-                          padding: EdgeInsets.zero,
-                          onPressed: () async{
+                        GestureDetector(
+                          onTap:()async{
                             await launchUrl(Uri.parse(accountUrl.linkedinUrl),mode: LaunchMode.externalApplication);
                           },
-                          icon: Icon(
+                          child: Icon(
                             FlutterRemix.linkedin_box_line,
                             size: 23.sp,
                           ),
                         ),
-                        
+                        SizedBox(width: 3.w,),
 
                         ///YOUTUBE
-                        IconButton(
-                          padding: EdgeInsets.all(0),
-                          onPressed: ()async{
+                        GestureDetector(
+                          onTap:()async{
                             await launchUrl(Uri.parse(accountUrl.youtubeUrl),mode: LaunchMode.externalApplication);
                           },
-                          icon: Icon(
+                          child: Icon(
                             FlutterRemix.youtube_line,
                             size: 23.sp,
                           ),
                         ),
+                        SizedBox(width: 3.w,),
                         
                         ///GITHUB
-                        IconButton(
-                          onPressed: ()async {
+                        GestureDetector(
+                          onTap:()async{
                             await launchUrl(Uri.parse(accountUrl.githubUrl),mode: LaunchMode.externalApplication);
                           },
-                          icon: Icon(
+                          child: Icon(
                             FlutterRemix.github_line,
                             size: 23.sp,
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -159,7 +160,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   ///CV, WHATSAPP, MESSENGER BUTTONS
                   Padding(
                     padding: EdgeInsets.symmetric(
-                        horizontal: 0.8.w, vertical: 0.1.h),
+                        horizontal: 0.8.w, vertical: 0.5.h),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -185,7 +186,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                   Icon(
                                     FlutterRemix.download_line,
                                     color: Colors.white,
-                                    size: 15.sp,
+                                    size: 13.sp,
                                   )
                                 ],
                               ),
@@ -264,19 +265,19 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               Tab(
                                 child: Text(
                                   "About",
-                                  style: GoogleFonts.openSans(fontSize: 15.sp),
+                                  style: GoogleFonts.openSans(fontSize: 14.sp),
                                 ),
                               ),
                               Tab(
                                 child: Text(
                                   "Projects",
-                                  style: GoogleFonts.openSans(fontSize: 15.sp),
+                                  style: GoogleFonts.openSans(fontSize: 14.sp),
                                 ),
                               ),
                               Tab(
                                 child: Text(
                                   "Skills",
-                                  style: GoogleFonts.openSans(fontSize: 15.sp),
+                                  style: GoogleFonts.openSans(fontSize: 14.sp),
                                 ),
                               ),
                             ],
@@ -287,8 +288,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   ),
 
                   AutoScaleTabBarView(
+                    physics: const AlwaysScrollableScrollPhysics(),
                     controller: tabController,
-                    children: const [AboutPage(), ProjectsPage(), SkillsPage()],
+                    children: const [AboutPage(), ProjectsPage(),SkillsPage(),],
                   ),
 
                   

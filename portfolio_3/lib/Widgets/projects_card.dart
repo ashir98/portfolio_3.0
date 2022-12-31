@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_remix/flutter_remix.dart';
 import 'package:portfolio_3/Widgets/project_detail.dart';
 import 'package:sizer/sizer.dart';
-import 'package:transparent_image/transparent_image.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ProjectCard extends StatelessWidget {
@@ -44,25 +43,16 @@ class ProjectCard extends StatelessWidget {
                               borderRadius:
                                   BorderRadius.all(Radius.circular(15))),
                           child: InkWell(
-                            // onTap: () => Navigator.of(context).push(
-                            //   PageRouteBuilder(pageBuilder:(context, animation, secondaryAnimation) =>ProjectDetailPage(imagePath: imagePath),)
-                            // ),
-                            child: InkWell(
-                              onTap: () =>
-                                  Navigator.of(context).push(PageRouteBuilder(
-                                reverseTransitionDuration:
-                                    const Duration(milliseconds: 50),
-                                pageBuilder:
-                                    (context, animation, secondaryAnimation) =>
-                                        ProjectDetailPage(
-                                  imagePath: imagePath,
-                                  projectDesc: projectDesc,
+                            onTap: () =>
+                                Navigator.of(context).push(PageRouteBuilder(
+                              reverseTransitionDuration:const Duration(milliseconds: 50),
+                              pageBuilder:(context, animation, secondaryAnimation) =>ProjectDetailPage(
+                                imagePath: imagePath,projectDesc: projectDesc
                                 ),
-                              )),
-                              child: Hero(
-                                tag: imagePath,
-                                child: Image.asset(imagePath, fit: BoxFit.fill,width: double.infinity, height: double.infinity,)
-                              ),
+                            )),
+                            child: Hero(
+                              tag: imagePath,
+                              child: Image.asset(imagePath, fit: BoxFit.fill,width: double.infinity, height: double.infinity,)
                             ),
                           )),
                     )),
@@ -72,13 +62,11 @@ class ProjectCard extends StatelessWidget {
                     style:  TextStyle(
                         fontSize: 17.sp, fontWeight: FontWeight.w400),
                   ),
-                  trailing:  IconButton(
-                    constraints: BoxConstraints(),
-                    padding: EdgeInsets.zero,
-                    onPressed: ()async{
+                  trailing:  GestureDetector(
+                    onTap: ()async{
                       await launchUrl(Uri.parse(projectUrl), mode: LaunchMode.externalApplication);
                     },
-                    icon: Icon(
+                    child: Icon(
                       FlutterRemix.github_line,
                       color: const Color(0xff38a0f9),
                       size: 23.sp,

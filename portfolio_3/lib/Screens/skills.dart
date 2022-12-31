@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_3/Widgets/certificate_card.dart';
-import 'package:portfolio_3/Widgets/projects_card.dart';
 import 'package:portfolio_3/Widgets/skillset_widget.dart';
 
 class SkillsPage extends StatelessWidget {
@@ -39,9 +38,9 @@ class SkillsPage extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 5,),
-          CertificationCard(name: "Flutter Certification", image: "images/certificate.jpg"),
-          SizedBox(height: 5,),
+          const SizedBox(height: 5,),
+          CertificationCard(name: "My Flutter Certification", image: "images/certificate.jpg"),
+          const SizedBox(height: 5,),
         ],
       ),
     );

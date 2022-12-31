@@ -1,6 +1,6 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:sizer/sizer.dart';
 
 class CertificationCard extends StatelessWidget {
@@ -23,7 +23,7 @@ class CertificationCard extends StatelessWidget {
                 Expanded(
                     flex: 4,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal:5, vertical: 2),
+                      padding: const EdgeInsets.symmetric(horizontal:5, vertical: 5),
                       child: Card(
                           elevation: 0,
                           clipBehavior: Clip.antiAliasWithSaveLayer,

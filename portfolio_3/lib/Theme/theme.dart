@@ -1,20 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio_3/Constants/constants.dart';
 
+CustomColor customColor = CustomColor();
 ThemeData lightTheme() {
   return ThemeData(
-    textTheme: GoogleFonts.openSansTextTheme(),
+
     useMaterial3: true,
     shadowColor: const Color(0xff38a0f9),
-    scaffoldBackgroundColor: Colors.white,
+    scaffoldBackgroundColor: customColor.lightBgColor,
+
+
+    ///TEXT_FONTS THEME
+    textTheme: GoogleFonts.openSansTextTheme(),
+
+    
+    ////APP BAR THEME
     appBarTheme: const AppBarTheme(
+        surfaceTintColor: Colors.white,
         color: Colors.white,
         actionsIconTheme: IconThemeData(color: Colors.black)),
-    cardTheme: const CardTheme(
-      color: Color(0xffe8e8eb),
-    ),
     
+    ////CARD THEME
+    cardTheme:  CardTheme(
+      color: customColor.secondaryLightColor,
+    ),
+
+    ////ICON THEME
     iconTheme: const IconThemeData(color: Colors.black),
+
+    ////TAB BAR THEME
     tabBarTheme: const TabBarTheme(
         labelStyle: TextStyle(
             color: Colors.black, fontSize: 18, fontWeight: FontWeight.w400),
@@ -28,24 +43,33 @@ ThemeData lightTheme() {
 }
 
 
-ThemeData darkTheme(){
-  return ThemeData.dark().copyWith(
-    textTheme: GoogleFonts.openSansTextTheme(TextTheme(headline1: TextStyle(color: Colors.white), headline2: TextStyle(color: Colors.white))),
-    useMaterial3: true,
-    scaffoldBackgroundColor: const Color(0xff0a141d),
-    appBarTheme: const AppBarTheme(
-      backgroundColor: Color(0xff0a141d)
-    ),
-    cardTheme: const CardTheme(
-        color: Color(0xff161f26)
-    ),
 
-    //  elevatedButtonTheme: ElevatedButtonThemeData(
-    //   style: ElevatedButton.styleFrom(
-    //     backgroundColor: Color(0xffe8e9eb),
-    //   ),
-    // ),
+ThemeData darkTheme() {
+  return ThemeData.dark().copyWith(
+    useMaterial3: true,
+    scaffoldBackgroundColor: customColor.darkBgColor,
+
+    ///TEXT_FONT THEME
+    textTheme: GoogleFonts.openSansTextTheme(
+      const TextTheme(
+          bodyMedium: TextStyle(color: Colors.white),
+          titleMedium: TextStyle(color: Colors.white)),
+    ),
+    
+
+    ////APP BAR THEME
+    appBarTheme: const AppBarTheme(
+        surfaceTintColor: Color(0xff0a141d),
+        backgroundColor: Color(0xff0a141d)),
+
+
+    ////CARD THEME    
+    cardTheme: const CardTheme(color: Color(0xff161f26)),
+    
+    ///ICON THEME
     iconTheme: const IconThemeData(color: Colors.white),
+    
+    ///TAB BAR THEME
     tabBarTheme: const TabBarTheme(
         labelStyle: TextStyle(
             color: Colors.white, fontSize: 18, fontWeight: FontWeight.w400),
@@ -53,12 +77,8 @@ ThemeData darkTheme(){
             color: Colors.white, fontSize: 18, fontWeight: FontWeight.w400),
         labelColor: Colors.white,
         indicator: BoxDecoration(
-          boxShadow: [BoxShadow(color: Colors.transparent)],
+            boxShadow: [BoxShadow(color: Colors.transparent)],
             color: Color(0xff0a141d),
             borderRadius: BorderRadius.all(Radius.circular(10)))),
   );
-
-
-
-  
 }

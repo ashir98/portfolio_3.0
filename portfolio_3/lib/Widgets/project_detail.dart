@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class ProjectDetailPage extends StatelessWidget {
   String imagePath, projectDesc;

@@ -2,19 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_3/Provider/theme_settings.dart';
 import 'package:portfolio_3/Screens/home.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter/services.dart';
+
 
 void main() {
+
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+
+
   runApp( const Portfolio3());
 }
 
-class Portfolio3 extends StatefulWidget {
+class Portfolio3 extends StatelessWidget {
   const Portfolio3({super.key});
 
-  @override
-  State<Portfolio3> createState() => _Portfolio3State();
-}
-
-class _Portfolio3State extends State<Portfolio3> {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(

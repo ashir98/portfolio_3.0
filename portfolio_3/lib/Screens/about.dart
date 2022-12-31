@@ -6,101 +6,104 @@ class AboutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String biography = "Hi, my name is Syed Ashir Ali and I'm a Flutter Mobile App Developer and also a student of Computer Science from Karachi,Pakistan. I have 1.5 year experience in Flutter mobile application development. I am constantly seeking to improve my skills and stay up-to-date with the latest developments in the Flutter ecosystem. I am excited to bring my expertise and passion to new challenges and projects as a Flutter developer.";
     return Sizer(
       builder: (context, orientation, deviceType) {
-        return Column(
-          children: [
-            ////BIOGRAPHY CONTAINER
-            Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 5.w, 
-              ),
-              child: Container(
-                decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
-                child: Card(
-                  elevation: 1,
-                  child: Padding(
-                    padding: EdgeInsets.all(10.sp),
-                    child: Center(
-                        child: Text(
-                      "Hi, my name is Syed Ashir Ali and I'm a Flutter Mobile App Developer and also a student of Computer Science from Karachi, Pakistan. I have 1.5 year experience in Flutter mobile application development",
-                      style: TextStyle(fontSize: 15.sp, height: 1.7, fontWeight: FontWeight.w500),textAlign: TextAlign.justify,
-                    )),
+        return SingleChildScrollView(
+          child: Column(
+            children: [
+              ////BIOGRAPHY CONTAINER
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 5.w, 
+                ),
+                child: Container(
+                  decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  child: Card(
+                    elevation: 1,
+                    child: Padding(
+                      padding: EdgeInsets.all(10.sp),
+                      child: Center(
+                          child: Text(
+                        biography,
+                        style: TextStyle(fontSize: 15.sp, height: 1.7, fontWeight: FontWeight.w500),textAlign: TextAlign.justify,
+                      )),
+                    ),
                   ),
                 ),
               ),
-            ),
-
-            const SizedBox(
-              height: 10,
-            ),
-
-            ////INFORMATION AND DETAILS SECTION
-            Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.sp),
-              child: Container(
-              
-                decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
-                child: Card(
-                  elevation: 1,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Center(
-                      child: Column(
-                        children: [
-                          ListTile(
-                            title: Text(
-                              "Name:",
-                              style: TextStyle(
-                                  fontSize: 17.sp,
-                                  fontWeight: FontWeight.bold),
+        
+              const SizedBox(
+                height: 10,
+              ),
+        
+              ////INFORMATION AND DETAILS SECTION
+              Padding(
+                padding:  EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.sp),
+                child: Container(
+                
+                  decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  child: Card(
+                    elevation: 1,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Center(
+                        child: Column(
+                          children: [
+                            ListTile(
+                              title: Text(
+                                "Name:",
+                                style: TextStyle(
+                                    fontSize: 17.sp,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              trailing: Text("Syed Ashir Ali",
+                                  style: TextStyle(fontSize: 17.sp)),
                             ),
-                            trailing: Text("Syed Ashir Ali",
-                                style: TextStyle(fontSize: 17.sp)),
-                          ),
-                          ListTile(
-                            title: Text("From:",
-                                style: TextStyle(
-                                    fontSize: 17.sp,
-                                    fontWeight: FontWeight.bold)),
-                            trailing: Text("Karachi, Pakistan",
-                                style: TextStyle(fontSize: 17.sp)),
-                          ),
-                          ListTile(
-                            title: Text("Qualification:",
-                                style: TextStyle(
-                                    fontSize: 17.sp,
-                                    fontWeight: FontWeight.bold)),
-                            trailing: Text("BSCS",
-                                style: TextStyle(fontSize: 17.sp)),
-                          ),
-                          ListTile(
-                            title: Text("Email:",
-                                style: TextStyle(
-                                    fontSize: 17.sp,
-                                    fontWeight: FontWeight.bold)),
-                            trailing: Text("syedashir07@gmail.com",
-                                style: TextStyle(fontSize:16.sp)),
-                          ),
-                          ListTile(
-                            title: Text("Phone:",
-                                style: TextStyle(
-                                    fontSize: 17.sp,
-                                    fontWeight: FontWeight.bold)),
-                            trailing: Text("+92 3353226549",
-                                style: TextStyle(fontSize: 17.sp)),
-                          )
-                        ],
+                            ListTile(
+                              title: Text("From:",
+                                  style: TextStyle(
+                                      fontSize: 17.sp,
+                                      fontWeight: FontWeight.bold)),
+                              trailing: Text("Karachi, Pakistan",
+                                  style: TextStyle(fontSize: 17.sp)),
+                            ),
+                            ListTile(
+                              title: Text("Qualification:",
+                                  style: TextStyle(
+                                      fontSize: 17.sp,
+                                      fontWeight: FontWeight.bold)),
+                              trailing: Text("BSCS",
+                                  style: TextStyle(fontSize: 17.sp)),
+                            ),
+                            ListTile(
+                              title: Text("Email:",
+                                  style: TextStyle(
+                                      fontSize: 17.sp,
+                                      fontWeight: FontWeight.bold)),
+                              trailing: Text("syedashir07@gmail.com",
+                                  style: TextStyle(fontSize:16.sp)),
+                            ),
+                            ListTile(
+                              title: Text("Phone:",
+                                  style: TextStyle(
+                                      fontSize: 17.sp,
+                                      fontWeight: FontWeight.bold)),
+                              trailing: Text("+92 3353226549",
+                                  style: TextStyle(fontSize: 17.sp)),
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(height: 5,),
-          ],
+              const SizedBox(height: 5,),
+            ],
+          ),
         );
       },
     );
